@@ -5,6 +5,8 @@ import "./globals.css";
 // import { CreateClient } from "@prismicio/client";
 import { createClient } from "@/prismicio"
 import { create } from "domain";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const nunito = Nunito(
   { subsets: ["latin"],
@@ -38,7 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(nunito.variable, nunitoSans.variable)}>{children}</body>
+      <body className={clsx(nunito.variable, nunitoSans.variable)}>
+      <Header/>
+        {children}
+      <Footer/>
+      </body>
     </html>
   );
 }
