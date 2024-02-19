@@ -6,17 +6,17 @@ import Heading from "@/app/components/Heading";
 
 const components : JSXMapSerializer = {
   heading2 : ({children})=> (
-    <Heading as='h2' size = "md" className="text-center mb-12 mx-auto">
+    <Heading as='h2' size = "md" className="text-center mb-8 md:mb-12 mx-auto">
       {children}
     </Heading>
   ),
   heading3 : ({children})=> (
-    <Heading as='h3' size= 'sm' className="mb-2 font-medium sm:text-left text-center">
+    <Heading as='h3' size= 'sm' className="mb-2 font-medium sm:text-left text-center mt-3">
       {children}
     </Heading>
   ),
   paragraph : ({children})=>(
-    <p className="text-base font-medium font-body text-slate-600 sm:text-left word-break text-justifyoverflow-x-hidden">
+    <p className="text-base font-medium font-body text-slate-600 word-break text-justify overflow-x-hidden">
       {children}
     </p>
   )
@@ -48,7 +48,7 @@ const Features = ({ slice }: FeaturesProps): JSX.Element => {
       <PrismicRichText components={components} field={slice.primary.heading} />
       <div className=" flex flex-wrap gap-y-8  w-3/4 mx-auto flex-col md:flex-row">
         {slice.items.map((item,index)=>(
-          <div key={index} className="md:w-1/4 md:pr-6 last:pr-0 border-solid flex flex-col items-center">
+          <div key={index} className="md:w-1/4 md:pr-10 last:pr-0 border-solid flex flex-col items-center">
             {item.icon &&(
               <>{icons[item.icon]}</>
             )}
