@@ -7,7 +7,9 @@ import { components } from "@/slices";
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("homepage");
-// return <div className="bg-slate-500">it works</div>
+// return <h1 className="bg-slate-500 text-5xl font-display text-slate-200">
+//   it works
+//   </h1>
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
